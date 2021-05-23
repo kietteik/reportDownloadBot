@@ -23,18 +23,23 @@ loginButton = driver.find_element_by_css_selector('button[type="button"]')
 loginButton.click()
 sleep(3)
 
+driver.implicitly_wait(10)
+
 sellerCenter = driver.find_elements_by_xpath(
     '/html/body/div/div[2]/div/div/div[1]/div/span')
 sellerCenter[0].click()
-sleep(1)
+sleep(3)
 
 driver.switch_to.window(driver.window_handles[1])
 
 stores = driver.find_elements_by_xpath(
-    '/html/body/div[1]/div[2]/div/div/div[4]/div[2]/div[1]')
+    '//*[@id="app"]/div[2]/div/div/div[4]/div/div[2]/div[1]/div')
 
 stores[0].click()
 sleep(2)
+
+### CHẠY ĐƯỢC TỚI ĐÂY
+
 driver.find_element_by_xpath(
     "/html/body/div[1]/div[2]/div[1]/div[2]/ul/li[5]/ul/li/a/span[1]").click()
 
